@@ -1,0 +1,69 @@
+{
+  "name": "MyGatsby",
+  "private": true,
+  "description": "A blog powered by Gatsby and Markdown",
+  "version": "0.1.0",
+  "author": "weedustzhao<ldc4@vip.qq.com>",
+  "dependencies": {
+    "crypto-js": "^4.1.1",
+    "dayjs": "^1.11.0",
+    "gatsby": "^4.11.2",
+    "gatsby-image": "^3.11.0",
+    "gatsby-plugin-feed": "^4.11.1",
+    "gatsby-plugin-gatsby-cloud": "^4.11.1",
+    "gatsby-plugin-google-analytics": "^4.11.0",
+    "gatsby-plugin-image": "^2.11.1",
+    "gatsby-plugin-less": "^6.11.0",
+    "gatsby-plugin-manifest": "^4.11.1",
+    "gatsby-plugin-offline": "^5.11.1",
+    "gatsby-plugin-react-helmet": "^5.11.0",
+    "gatsby-plugin-sharp": "^4.11.1",
+    "gatsby-plugin-typography": "^4.11.0",
+    "gatsby-remark-copy-linked-files": "^5.11.0",
+    "gatsby-remark-images": "^6.11.1",
+    "gatsby-remark-prismjs": "^6.11.0",
+    "gatsby-remark-responsive-iframe": "^5.11.0",
+    "gatsby-remark-smartypants": "^5.11.0",
+    "gatsby-source-filesystem": "^4.11.1",
+    "gatsby-transformer-json": "^4.11.0",
+    "gatsby-transformer-remark": "^5.11.1",
+    "gatsby-transformer-sharp": "^4.11.0",
+    "gitalk": "^1.7.2",
+    "less": "^4.1.2",
+    "prismjs": "^1.27.0",
+    "prop-types": "^15.8.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0",
+    "react-typography": "^0.16.20",
+    "typeface-merriweather": "^1.1.13",
+    "typeface-montserrat": "^1.1.13",
+    "typography": "^0.16.21",
+    "typography-plugin-code": "^0.16.20",
+    "typography-theme-github": "^0.16.19"
+  },
+  "devDependencies": {
+    "prettier": "^2.6.2"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "start": "gatsby develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "deploy": "gatsby build --prefix-paths && gh-pages -r https://github.com/ldc4/blog.git -d public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  },
+  "bugs": {
+    "url": "https://github.com/ldc4/MyGatsby/issues"
+  }
+}
