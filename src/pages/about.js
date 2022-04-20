@@ -51,7 +51,7 @@ class About extends React.Component {
                           <div>基本信息</div>
                         </div>
                         <div className="box-content">
-                          <div>年龄：25岁</div>
+                          <div>年龄：27岁</div>
                           <div>性别：男</div>
                         </div>
                       </div>
@@ -66,7 +66,6 @@ class About extends React.Component {
                         <div className="box-content">
                           <div>毕业学校：重庆邮电大学/本科</div>
                           <div>选修专业：计算机与智能科学大类/信息安全</div>
-                          <div>学习路线：JAVA EE</div>
                         </div>
                       </div>
                     </div>
@@ -99,13 +98,12 @@ class About extends React.Component {
                           <div>兴趣</div>
                         </div>
                         <div className="box-content">
-                          <div>编程（唯一作为工作的兴趣，JS天下无敌）</div>
-                          <div>玩游戏（PC/PS/Switch，手残平民玩家）</div>
+                          <div>编程（JS天下无敌）</div>
+                          <div>玩游戏（PC/PS/Switch，LOL手残平民玩家）</div>
                           <div>浅度二次元（动漫、高达、公仔手办）</div>
-                          <div>Poping（资质不行，已放弃）</div>
-                          <div>Launchpad（种草中）</div>
-                          <div>做游戏（Unity3D，精力不够已放弃。Cocos Creator，种草中）</div>
-                          <div>赚钱（炒港股，为了能够更好的支撑我兴趣，目前唯一觉得可以一试的道路，目前赔本中，求大佬带带本韭）</div>
+                          <div>Popping（资质不行，已放弃）</div>
+                          <div>Launchpad（没音乐细胞，已放弃）</div>
+                          <div>Unity3D,Cocos Creator（精力不够，已放弃）</div>
                         </div>
                       </div>
                     </div>
@@ -118,8 +116,9 @@ class About extends React.Component {
                         </div>
                         <div className="box-content">
                           <div>性格：温和，脾气好，近熟者。偶有不理智无害行为。</div>
-                          <div>擅长：环境适应能力强，能保持学习热情</div>
+                          <div>擅长：环境适应能力强，<del>能保持学习热情</del></div>
                           <div>缺点：创造能力弱，精力容易分散，专精度不够深，害怕演讲，英文白痴，沟通能力有待提升</div>
+                          <div>至今，擅长渐渐失去，缺点还一点未改善</div>
                         </div>
                       </div>
                     </div>
@@ -127,7 +126,6 @@ class About extends React.Component {
                 </Row>
               </Col>
             </Row>
-            
           </div>
         </div>
       </Layout>

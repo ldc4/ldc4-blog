@@ -1,8 +1,8 @@
-import sha256 from 'crypto-js/sha256'
+import md5 from 'crypto-js/md5'
 
 // 得到hash字符串
 const getHash = (str) => {
-  return sha256(str);
+  return md5(str);
 };
 
 export default {

@@ -1,11 +1,11 @@
 const path = require('path')
 const _ = require('lodash')
-const sha256 = require('crypto-js/sha256')
+const md5 = require('crypto-js/md5')
 
 const { createFilePath } = require('gatsby-source-filesystem')
 
 const getHash = (str) => {
-  return sha256(str);
+  return md5(str);
 }
 
 exports.createPages = ({ graphql, actions }) => {
