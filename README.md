@@ -78,8 +78,7 @@ https://www.gatsbyjs.org/docs/how-gatsby-works-with-github-pages/
 - [x] 标签页面
 - [x] 关于页面
 - [x] 导航配置化
-- [ ] 文章列表分页
-- [ ] 文章列表默认摘要异常问题
+- [x] 文章列表分页
 - [x] 草稿标识
 
 ## 注意事项

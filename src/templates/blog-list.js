@@ -2,21 +2,21 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import _ from 'lodash'
 import dayjs from 'dayjs'
-import qs from 'qs'
 import commonUtils from '../utils/common'
 
 import Layout from '../components/Layout/Layout'
 import Pagination from '../components/Pagination'
 import { Row, Col } from '../components/Grids'
 import SEO from '../components/SEO/seo'
-import './index.less'
+import './blog-list.less'
 
-class BlogIndex extends React.Component {
+class BlogList extends React.Component {
   render() {
-    const { data = {}, location = {} } = this.props;
+    const { data = {}, location = {}, pageContext } = this.props;
 
     const { site = {}, allMarkdownRemark = {}, allNavigationJson = {} } = data;
-    const { pathname = '', search = '' } = location;
+    const { pathname = '' } = location;
+    const { currentPage, pageNum } = pageContext;
 
     const { siteMetadata } = site;
     const { edges: posts = [] } = allMarkdownRemark;
@@ -30,14 +30,6 @@ class BlogIndex extends React.Component {
     const publishPosts = _.filter(posts, p => !_.get(p, "node.frontmatter.draft"));
     const renderPosts = process.env.NODE_ENV !== 'production' ? posts : publishPosts;
 
-    // 获取分页信息
-    const query = qs.parse(search, { ignoreQueryPrefix: true });
-    const currentPage = !isNaN(query.page) ? Number(query.page) : 1;
-    const pageLimit = 10; // 默认10篇一页，暂不允许自定义设置
-    const pageCount = renderPosts.length;
-    const pageNum = Math.ceil(pageCount / pageLimit);
-    const renderPagePosts = renderPosts.slice((currentPage - 1) * pageLimit, currentPage * pageLimit);
-
     return (
       <Layout pathname={rePathname} metadata={siteMetadata} navs={navs}>
         <SEO
@@ -45,7 +37,7 @@ class BlogIndex extends React.Component {
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
         <div className="fragment-list page-content">
-          {renderPagePosts.map(({ node }) => {
+          {renderPosts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug;
             const date = dayjs(node.frontmatter.date).format('YYYY-MM-DD');
             const tags = node.frontmatter.tags || [];
@@ -90,8 +82,8 @@ class BlogIndex extends React.Component {
           <Pagination
             currentPage={currentPage}
             pageNum={pageNum}
-            prevLink={`/?page=${currentPage - 1}`}
-            nextLink={`/?page=${currentPage + 1}`}
+            prevLink={`/list/${currentPage - 1}`}
+            nextLink={`/list/${currentPage + 1}`}
           />
         </div>
       </Layout>
@@ -99,17 +91,21 @@ class BlogIndex extends React.Component {
   }
 }
 
-export default BlogIndex
+export default BlogList
 
 export const pageQuery = graphql`
-  query {
+  query BlogList($limit: Int!, $skip: Int!) {
     site {
       siteMetadata {
         title
         author
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: $limit
+      skip: $skip
+    ) {
       edges {
         node {
           excerpt(format: HTML)

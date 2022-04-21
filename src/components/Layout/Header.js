@@ -7,7 +7,7 @@ import './Header.less'
 class Header extends React.Component {
   render() {
     const { pathname, title, navs } = this.props;
-    
+
     // 处理末尾"/"
     const reg = new RegExp(`\/$`);
     const rePathname = pathname.replace(reg, '');
